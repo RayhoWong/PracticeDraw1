@@ -7,7 +7,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class Practice10HistogramView : View {
+class Practice10HistogramView(context: Context?, attributeSet: AttributeSet) : View(context, attributeSet) {
 
     private val paintTv: Paint
     private val paintRe: Paint
@@ -19,12 +19,8 @@ class Practice10HistogramView : View {
         paintTv = Paint(Paint.ANTI_ALIAS_FLAG)
         paintRe = Paint(Paint.ANTI_ALIAS_FLAG)
         paintLine = Paint(Paint.ANTI_ALIAS_FLAG)
-        linePoints = floatArrayOf(120f,20f,120f,500f,120f,500f,950f,500f)
+        linePoints = floatArrayOf(120f,20f,120f,500f,120f,500f,1000f,500f)
     }
-
-
-    constructor(context: Context?) : super(context) {}
-
 
 
     override fun onDraw(canvas: Canvas) {
@@ -34,7 +30,7 @@ class Practice10HistogramView : View {
 
         //坐标系
         paintLine.style = Paint.Style.STROKE
-        paintLine.strokeWidth = 20f
+        paintLine.strokeWidth = 2f
         paintLine.color = Color.WHITE
         canvas.drawLines(linePoints,paintLine)
 
@@ -52,16 +48,13 @@ class Practice10HistogramView : View {
         //文字
         paintTv.textSize = 30f
         paintTv.color = Color.WHITE
-        canvas.drawText("直方图",120f + (950f - 120f)/2,600f,paintTv)
-        canvas.drawText("Froyo",180f,500f,paintTv)
-        canvas.drawText("GB",300f,500f,paintTv)
-        canvas.drawText("ICS",420f,500f,paintTv)
-        canvas.drawText("JB",540f,500f,paintTv)
-        canvas.drawText("KitKat",660f,500f,paintTv)
-        canvas.drawText("L",780f,500f,paintTv)
-        canvas.drawText("M",900f,500f,paintTv)
-
-
-
+        canvas.drawText("直方图",120f + (950f - 120f)/2,800f,paintTv)
+        canvas.drawText("Froyo",180f,550f,paintTv)
+        canvas.drawText("GB",300f,550f,paintTv)
+        canvas.drawText("ICS",420f,550f,paintTv)
+        canvas.drawText("JB",540f,550f,paintTv)
+        canvas.drawText("KitKat",660f,550f,paintTv)
+        canvas.drawText("L",780f,550f,paintTv)
+        canvas.drawText("M",900f,550f,paintTv)
     }
 }
