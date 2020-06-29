@@ -17,7 +17,7 @@ class Practice6DrawLineView : View {
         //        练习内容：使用 canvas.drawLine() 方法画直线
         val paint = Paint()
         paint.color = Color.BLACK
-        paint.strokeWidth = 50f
+        paint.strokeWidth = 5f
         canvas.drawLine(200f,200f,500f,500f,paint)
     }
 }
