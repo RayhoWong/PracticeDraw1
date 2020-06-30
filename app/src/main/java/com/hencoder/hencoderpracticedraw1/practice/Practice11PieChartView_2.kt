@@ -71,6 +71,7 @@ class Practice11PieChartView_2 : View {
             val endX = (cos(Math.toRadians(textAngle.toDouble())) * 350).toFloat()
             val endY = (sin(Math.toRadians(textAngle.toDouble())) * 350).toFloat()
             if (i == 5){
+                //绘制偏移扇形的部分
                 canvas.translate(-30f,-30f)
                 canvas.drawLine(startX,startY,endX,endY,paintLine)
                 canvas.translate(30f,30f)
@@ -82,6 +83,7 @@ class Practice11PieChartView_2 : View {
                 val textRect = getTextBounds(names[i],paintText)
                 //endX小于0 表示点在三四象限，反之在一二象限
                 if (i == 5){
+                    //绘制偏移扇形的部分
                     canvas.translate(-30f,-30f)
                     canvas.drawLine(endX,endY,-380f,endY,paintLine)
                     canvas.drawText(names[i],-400f - textRect.width(),endY,paintText)
