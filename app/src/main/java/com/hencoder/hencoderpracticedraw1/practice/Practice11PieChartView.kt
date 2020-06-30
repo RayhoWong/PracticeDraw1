@@ -62,6 +62,7 @@ class Practice11PieChartView : View {
         for (i in deviceNames.indices) { //画饼图
             paintPie.strokeWidth = 10f
             paintPie.color = colorInteger[i]
+
             sweepAngle = precentInteger[i].toFloat()
             val deviceName = deviceNames[i]
             val textAngle = startAngle + precentInteger[i] / 2 //获取每个弧度中点，中点话延长线
